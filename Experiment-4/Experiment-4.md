@@ -208,7 +208,7 @@ Vlan    Mac Address       Type        Ports
 
 PC0 -> Router0 -> Switch -> Router1 -> PC1
 
-![Prof-3](/Users/qiu_nangong/Documents/GitHub/Computer-Network/Expeirment-4/Prof-3.gif)
+![Prof-3](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)
 
 ### 4) 重新启动Wiresharrk捕获，用PC1 ping PC0，查看是否可以捕获到 ARP 包、Echo 请求包和 Echo 响应包。如果有则对捕获的包截屏。查看并记录（截屏）PC0 的 ARP 缓冲区。最后，对结果进行分析。
 
@@ -216,15 +216,15 @@ PC0 -> Router0 -> Switch -> Router1 -> PC1
 
 PC0 -> Router0 -> Switch -> Router1 -> PC1
 
-![](Prof-3.gif)
+![Prof-3](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)
 
 ### 5) 利用 Packet Tracer 数据包的 Flash 动画功能，在模拟模式下，展示 PC0 与 PC1 间的数据包流动情况
 
-![](Prof-3.gif)
+![Prof-3](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)
 
 ### 6) 把交换机的端口 F1/1 镜像到端口 F2/1，再用 PC0 ping PC1。查看 PC3 是否可以捕获到 ARP 包、Echo 请求包和 Echo 响应包，如果可以捕捉到，则记录结果（截屏）。查看并记录此时交换机的 MAC 地址表。对结果进行解释说明。
 
-![Prof-6](/Users/qiu_nangong/Documents/GitHub/Computer-Network/Expeirment-4/Prof-6.gif)
+![Prof-6](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-6.gif?raw=true)
 
 可见数据包在进行镜像后被分发到 PC2，故 PC2 能够捕获到包
 
@@ -250,7 +250,7 @@ Vlan    Mac Address       Type        Ports
 
 **详见 6)**
 
-![Prof-6](/Users/qiu_nangong/Documents/GitHub/Computer-Network/Expeirment-4/Prof-6.gif)
+![Prof-6](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-6.gif?raw=true)
 
 ### 8) PC0 运行 `ping -r 6 -l 200 192.168.3.22` 和 `ping -s 4 -l 200 192.168.3.22` （分别带路径和时间戳 ping PC1），在 PC2 上用 Wireshark 进行观察。找出 Echo 请求分组、Echo 响应分组、Timestamp 请求分组、Timestamp 相应分组进行展开并分别截屏。
 
