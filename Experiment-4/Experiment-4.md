@@ -252,6 +252,8 @@ Vlan    Mac Address       Type        Ports
 
 ![Prof-6](/Users/qiu_nangong/Documents/GitHub/Computer-Network/Expeirment-4/Prof-6.gif)
 
+### 8) PC0 运行 `ping -r 6 -l 200 192.168.3.22` 和 `ping -s 4 -l 200 192.168.3.22` （分别带路径和时间戳 ping PC1），在 PC2 上用 Wireshark 进行观察。找出 Echo 请求分组、Echo 响应分组、Timestamp 请求分组、Timestamp 相应分组进行展开并分别截屏。
+
 
 
 ## 自评
