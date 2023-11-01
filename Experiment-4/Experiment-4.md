@@ -208,7 +208,7 @@ Vlan    Mac Address       Type        Ports
 
 PC0 -> Router0 -> Switch -> Router1 -> PC1
 
-![Prof-3](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)
+**详见 [Prof-3.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)**
 
 ### 4) 重新启动Wiresharrk捕获，用PC1 ping PC0，查看是否可以捕获到 ARP 包、Echo 请求包和 Echo 响应包。如果有则对捕获的包截屏。查看并记录（截屏）PC0 的 ARP 缓冲区。最后，对结果进行分析。
 
@@ -216,15 +216,15 @@ PC0 -> Router0 -> Switch -> Router1 -> PC1
 
 PC0 -> Router0 -> Switch -> Router1 -> PC1
 
-![Prof-3](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)
+**详见 [Prof-4.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)**
 
 ### 5) 利用 Packet Tracer 数据包的 Flash 动画功能，在模拟模式下，展示 PC0 与 PC1 间的数据包流动情况
 
-![Prof-3](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)
+**详见 [Prof-5.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-3.gif?raw=true)**
 
 ### 6) 把交换机的端口 F1/1 镜像到端口 F2/1，再用 PC0 ping PC1。查看 PC3 是否可以捕获到 ARP 包、Echo 请求包和 Echo 响应包，如果可以捕捉到，则记录结果（截屏）。查看并记录此时交换机的 MAC 地址表。对结果进行解释说明。
 
-![Prof-6](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-6.gif?raw=true)
+**详见 [Prof-6.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-6.gif?raw=true)**
 
 可见数据包在进行镜像后被分发到 PC2，故 PC2 能够捕获到包
 
@@ -250,7 +250,7 @@ Vlan    Mac Address       Type        Ports
 
 **详见 6)**
 
-![Prof-6](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-6.gif?raw=true)
+**详见 [Prof-6.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-6.gif?raw=true)**
 
 ### 8) PC0 运行 `ping -r 6 -l 200 192.168.3.22` 和 `ping -s 4 -l 200 192.168.3.22` （分别带路径和时间戳 ping PC1），在 PC2 上用 Wireshark 进行观察。找出 Echo 请求分组、Echo 响应分组、Timestamp 请求分组、Timestamp 相应分组进行展开并分别截屏。
 
@@ -259,7 +259,7 @@ Vlan    Mac Address       Type        Ports
 ### 9) 删除 Router0 上的静态路由, 并增加默认路由指向路由器2 的以太网端口。PC0 ping PC1,用 Wireshark 进行观察并截屏。
 删除 Router1 上的静态路由, 并增加默认路由指向路由器1的以太网端口。PC0 ping PC1. 用 Wireshark 进行观察并截屏。
 
-![Prof-9.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-9.gif?raw=true)
+**详见 [Prof-9.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-9.gif?raw=true)**
 
 在 Packet Tracer 的模拟功能中可见，ping 数据包不经过 Switch 以及镜像端口
 
@@ -307,7 +307,7 @@ S*   0.0.0.0/0 is directly connected, Serial2/0
 
 ### 10) PC0 ping 一个本拓扑结构外的 IP 地址，用 Wireshark 观察流量并进行截屏，对结果进行分析
 
-![Prof-10.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-10.gif?raw=true)
+**详见 [Prof-10.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-10.gif?raw=true)**
 
 使用 PC0 `ping -t 192.168.114.51`，使用 Packer Tracer 的模拟功能可见数据包在 Router0/1 之间反复传输，这是因为两台 Router 的默认规则下一跳都是对方，该 IP 地址不存在于任何静态表中，故会循环传输。
 
