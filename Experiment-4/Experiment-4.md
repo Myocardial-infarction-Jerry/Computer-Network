@@ -31,11 +31,11 @@
 
 首先根据实验教程上的拓扑图进行网络配置
 
-![image-20231101012228772](/Users/qiu_nangong/Library/Application Support/typora-user-images/image-20231101012228772.png)
+![Topology map](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Topology%20map.png?raw=true)
 
 在 Packet Tracer 中有
 
-![image-20231101012247583](/Users/qiu_nangong/Library/Application Support/typora-user-images/image-20231101012247583.png)
+![Topology map in Packet Tracer](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Topology%20map%20in%20Packet%20Tracer.png?raw=true)
 
 对于各个设备进行 ip 配置，使用如下命令
 
@@ -254,7 +254,64 @@ Vlan    Mac Address       Type        Ports
 
 ### 8) PC0 运行 `ping -r 6 -l 200 192.168.3.22` 和 `ping -s 4 -l 200 192.168.3.22` （分别带路径和时间戳 ping PC1），在 PC2 上用 Wireshark 进行观察。找出 Echo 请求分组、Echo 响应分组、Timestamp 请求分组、Timestamp 相应分组进行展开并分别截屏。
 
+由于 Packet Tracer 中的 ping 命令不完整，故参照 6)，应能找到 Echo/Timestamp 的对应分组
 
+### 9) 删除 Router0 上的静态路由, 并增加默认路由指向路由器2 的以太网端口。PC0 ping PC1,用 Wireshark 进行观察并截屏。
+删除 Router1 上的静态路由, 并增加默认路由指向路由器1的以太网端口。PC0 ping PC1. 用 Wireshark 进行观察并截屏。
+
+![Prof-9.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-9.gif?raw=true)
+
+在 Packet Tracer 的模拟功能中可见，ping 数据包不经过 Switch 以及镜像端口
+
+路由的静态路由表如下：
+
+*Router0*
+
+```
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 0.0.0.0 to network 0.0.0.0
+
+C    192.168.1.0/24 is directly connected, FastEthernet1/0
+C    192.168.2.0/24 is directly connected, Serial2/0
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S*   0.0.0.0/0 is directly connected, Serial2/0
+```
+
+*Router1*
+
+```
+Router#show ip route
+Codes: C - connected, S - static, I - IGRP, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+       * - candidate default, U - per-user static route, o - ODR
+       P - periodic downloaded static route
+
+Gateway of last resort is 0.0.0.0 to network 0.0.0.0
+
+C    192.168.2.0/24 is directly connected, Serial2/0
+C    192.168.3.0/24 is directly connected, FastEthernet1/0
+C    192.168.6.0/24 is directly connected, FastEthernet0/0
+S*   0.0.0.0/0 is directly connected, Serial2/0
+```
+
+### 10) PC0 ping 一个本拓扑结构外的 IP 地址，用 Wireshark 观察流量并进行截屏，对结果进行分析
+
+![Prof-10.gif](https://github.com/Myocardial-infarction-Jerry/Computer-Network/blob/main/Experiment-4/Prof-10.gif?raw=true)
+
+使用 PC0 `ping -t 192.168.114.51`，使用 Packer Tracer 的模拟功能可见数据包在 Router0/1 之间反复传输，这是因为两台 Router 的默认规则下一跳都是对方，该 IP 地址不存在于任何静态表中，故会循环传输。
+
+在实际情况下，由于该数据包 TTL 有限，最终会被路由抛弃，造成超时。
 
 ## 自评
 
